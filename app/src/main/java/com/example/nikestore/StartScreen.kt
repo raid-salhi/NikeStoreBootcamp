@@ -51,7 +51,6 @@ fun StartScreen(){
                 color = Color.White,
                 fontSize = 65.sp,
                 fontWeight = FontWeight.Bold
-
             )
             Button(
                 onClick = { /*TODO*/ },
