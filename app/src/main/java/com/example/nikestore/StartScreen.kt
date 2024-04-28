@@ -59,7 +59,7 @@ fun StartScreen(navController: NavHostController) {
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 50.dp, end = 50.dp, bottom = 10.dp)
+                    .padding(start = 50.dp, end = 50.dp, top = 20.dp)
                 ) {
                 Text(
                     text = "Let’s check the store",

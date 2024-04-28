@@ -35,7 +35,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -100,7 +99,7 @@ fun HomeScreen(navController: NavHostController) {
             }
             LazyRow(modifier = Modifier.padding(top = 14.dp)) {
                 items(items=selectedShoes.value){
-                    ShoeCard(shoe=it)
+                    ShoeCard(shoe=it,navController=navController)
                 }
             }
             Text(
@@ -200,10 +199,11 @@ fun NewArrivalsCard() {
 }
 
 @Composable
-fun ShoeCard(shoe: Shoe) {
+fun ShoeCard(shoe: Shoe, navController: NavHostController) {
     Card(
         modifier = Modifier
             .width(150.dp)
+            .clickable { navController.navigate("DetailsScreen") }
             .padding(end = 14.dp),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White)

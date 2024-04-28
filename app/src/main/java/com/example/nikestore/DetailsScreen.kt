@@ -42,7 +42,7 @@ import com.example.nikestore.ui.theme.MyBlue
 
 //@Preview(showBackground = true)
 @Composable
-fun DetailsScreen(){
+fun DetailsScreen(navHostController: NavHostController){
     Surface (
         modifier = Modifier.fillMaxSize(),
         color = MyBackground
@@ -64,7 +64,7 @@ fun DetailsScreen(){
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     IconButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { navHostController.popBackStack() },
                         colors = IconButtonDefaults.iconButtonColors(containerColor = Color.White, contentColor = MyBlack)
                     ) {
                         Icon(
