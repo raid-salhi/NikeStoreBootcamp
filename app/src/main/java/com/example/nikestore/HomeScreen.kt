@@ -67,6 +67,7 @@ fun HomeScreen(navController: NavHostController) {
         Column (
             modifier = Modifier
                 .fillMaxSize()
+                // this line is to make the screen scrollable
                 .verticalScroll(rememberScrollState())
                 .padding(start = 20.dp, end = 20.dp, top = 10.dp, bottom = 10.dp),
         ){
@@ -84,10 +85,12 @@ fun HomeScreen(navController: NavHostController) {
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(top = 24.dp)
             )
+            //we use lazyRow to display a list of components horizontally
             LazyRow(modifier = Modifier.padding(top = 14.dp)) {
-                items(items=categories){
-                    CategoryCard(category=it,categorySelected = catSelected.value){
-                        catSelected.value =it
+                items(items=categories){ category ->
+                    CategoryCard(category=category,categorySelected = catSelected.value){
+                        // when categoryCard is clicked, these lines of code will be executed
+                        catSelected.value =category
                         if (catSelected.value=="All Shoes")
                             selectedShoes.value = allShoes
                         else
@@ -97,6 +100,7 @@ fun HomeScreen(navController: NavHostController) {
                     }
                 }
             }
+            //this lazyRow is to display the shoe cards
             LazyRow(modifier = Modifier.padding(top = 14.dp)) {
                 items(items=selectedShoes.value){
                     ShoeCard(shoe=it,navController=navController)
@@ -113,7 +117,7 @@ fun HomeScreen(navController: NavHostController) {
             NewArrivalsCard()
 
             Text(
-                text = "New Arrivals",
+                text = "Top Solds",
                 color = MyBlack,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
