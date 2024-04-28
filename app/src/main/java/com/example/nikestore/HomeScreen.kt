@@ -43,9 +43,9 @@ import com.example.nikestore.ui.theme.MyBackground
 import com.example.nikestore.ui.theme.MyBlack
 import com.example.nikestore.ui.theme.MyBlue
 
-@Preview(showBackground = true)
 @Composable
 fun HomeScreen(navController: NavHostController) {
+    // Static Data that we are using
     val categories = listOf("All Shoes","Outdoor","Tennis","Running")
     val allShoes = listOf(
         Shoe(name="Nike Jordan", category = "Outdoor", price = 302.00, pic = R.drawable.nike_shoe_1),
@@ -53,13 +53,14 @@ fun HomeScreen(navController: NavHostController) {
         Shoe(name="Nike Essential", category = "Running", price = 182.34, pic = R.drawable.nike_shoe_3),
         Shoe(name="Nike Zoom", category = "Outdoor", price = 593.33, pic = R.drawable.nike_shoe_4)
     )
+    // These states will changes over user interactions
     val catSelected = remember {
         mutableStateOf("All Shoes")
     }
     val selectedShoes = remember {
         mutableStateOf(allShoes)
-
     }
+    // Screen Code start here
     Surface (
         modifier = Modifier.fillMaxSize(),
         color = MyBackground

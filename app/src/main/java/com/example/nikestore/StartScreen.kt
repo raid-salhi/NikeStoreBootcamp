@@ -27,7 +27,6 @@ import androidx.navigation.NavHostController
 import com.example.nikestore.ui.theme.MyBlack
 import com.example.nikestore.ui.theme.MyBlue
 
-@Preview(showBackground = true, device = "id:pixel_4")
 @Composable
 fun StartScreen(navController: NavHostController) {
     Surface (
@@ -53,7 +52,9 @@ fun StartScreen(navController: NavHostController) {
                 fontWeight = FontWeight.Bold
             )
             Button(
-                onClick = { /*TODO*/ },
+                onClick = {
+                          navController.navigate("HomeScreen")
+                },
                 shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
                 modifier = Modifier
