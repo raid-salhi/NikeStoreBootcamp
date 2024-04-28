@@ -23,13 +23,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.nikestore.ui.theme.MyBackground
+import androidx.navigation.NavHostController
 import com.example.nikestore.ui.theme.MyBlack
 import com.example.nikestore.ui.theme.MyBlue
 
 @Preview(showBackground = true, device = "id:pixel_4")
 @Composable
-fun StartScreen(){
+fun StartScreen(navController: NavHostController) {
     Surface (
         modifier = Modifier.fillMaxSize(),
         color = MyBlue

@@ -38,13 +38,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.nikestore.ui.theme.MyBackground
 import com.example.nikestore.ui.theme.MyBlack
 import com.example.nikestore.ui.theme.MyBlue
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavHostController) {
     val categories = listOf("All Shoes","Outdoor","Tennis","Running")
     val allShoes = listOf(
         Shoe(name="Nike Jordan", category = "Outdoor", price = 302.00, pic = R.drawable.nike_shoe_1),
@@ -108,7 +109,9 @@ fun HomeScreen(){
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(top = 24.dp)
             )
+
             NewArrivalsCard()
+
             Text(
                 text = "New Arrivals",
                 color = MyBlack,
