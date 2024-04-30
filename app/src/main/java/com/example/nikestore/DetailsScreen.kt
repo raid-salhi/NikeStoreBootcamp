@@ -39,6 +39,7 @@ import com.example.nikestore.ui.theme.MyBlue
 //@Preview(showBackground = true)
 @Composable
 fun DetailsScreen(navHostController: NavHostController, sharedViewmodel: SharedViewmodel){
+    val shoe = sharedViewmodel.myShoe.value
     Surface (
         modifier = Modifier.fillMaxSize(),
         color = MyBackground
@@ -80,7 +81,7 @@ fun DetailsScreen(navHostController: NavHostController, sharedViewmodel: SharedV
                     Box(modifier = Modifier.background(Color.Transparent))
                 }
                 Text(
-                    text = "Nike Air Max 270",
+                    text = shoe.name,
                     fontFamily = FontFamily(listOf(Font(R.font.raleway_bold))),
                     color = MyBlack,
                     fontSize = 32.sp,
@@ -93,13 +94,13 @@ fun DetailsScreen(navHostController: NavHostController, sharedViewmodel: SharedV
                     modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
                 )
                 Text(
-                    text = "$179.39",
+                    text = "$${shoe.price}",
                     fontFamily = FontFamily(listOf(Font(R.font.raleway_bold))),
                     color = MyBlack,
                     fontSize = 24.sp,
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.nike_shoe_3),
+                    painter = painterResource(id = shoe.pic),
                     contentDescription = "shoe pic",
                     modifier = Modifier
                         .height(300.dp)

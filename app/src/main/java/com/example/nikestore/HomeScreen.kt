@@ -103,7 +103,7 @@ fun HomeScreen(navController: NavHostController, sharedViewmodel: SharedViewmode
             //this lazyRow is to display the shoe cards
             LazyRow(modifier = Modifier.padding(top = 14.dp)) {
                 items(items=selectedShoes.value){
-                    ShoeCard(shoe=it,navController=navController)
+                    ShoeCard(shoe=it,navController=navController,sharedViewmodel=sharedViewmodel)
                 }
             }
             Text(
@@ -203,11 +203,14 @@ fun NewArrivalsCard() {
 }
 
 @Composable
-fun ShoeCard(shoe: Shoe, navController: NavHostController) {
+fun ShoeCard(shoe: Shoe, navController: NavHostController, sharedViewmodel: SharedViewmodel) {
     Card(
         modifier = Modifier
             .width(150.dp)
-            .clickable { navController.navigate("DetailsScreen") }
+            .clickable {
+                sharedViewmodel.passShoe(shoe)
+                navController.navigate("DetailsScreen")
+            }
             .padding(end = 14.dp),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White)
