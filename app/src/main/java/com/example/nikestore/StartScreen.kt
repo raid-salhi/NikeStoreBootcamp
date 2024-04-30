@@ -48,7 +48,6 @@ fun StartScreen(navController: NavHostController) {
                 fontFamily = FontFamily(listOf(Font(R.font.futura_consended_extra_black))),
                 color = Color.White,
                 fontSize = 65.sp,
-                fontWeight = FontWeight.Bold
             )
             Button(
                 onClick = {
