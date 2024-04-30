@@ -43,7 +43,7 @@ import com.example.nikestore.ui.theme.MyBlack
 import com.example.nikestore.ui.theme.MyBlue
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController, sharedViewmodel: SharedViewmodel) {
     // Static Data that we are using
     val categories = listOf("All Shoes","Outdoor","Tennis","Running")
     val allShoes = listOf(
