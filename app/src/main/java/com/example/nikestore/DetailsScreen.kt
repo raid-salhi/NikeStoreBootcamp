@@ -126,7 +126,9 @@ fun DetailsScreen(navHostController: NavHostController, sharedViewmodel: SharedV
                 Icon(
                     painterResource(id = R.drawable.cart) ,
                     contentDescription = "cart icon",
-                    modifier = Modifier.size(24.dp).padding(top = 10.dp, bottom = 10.dp, end = 5.dp)
+                    modifier = Modifier
+                        .padding(top = 5.dp, bottom = 5.dp, end = 5.dp)
+                        .size(24.dp)
                 )
                 Text(
                     text = "Add To Cart",
